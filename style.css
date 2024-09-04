@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(photo_5965359315722292306_y.jpg);
+    background-repeat: repeat;
+    background-size: contain;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.container {
+    width: 335px;
+    height: 35%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 168px;
+    border-bottom-width: 137px;
+    border-style: solid;
+    border-color: transparent rgb(241, 157, 171) rgb(241, 157, 171) rgb(241, 157, 171);
+    z-index: 3;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 16px;
+    border-style: solid;
+    border-color: pink transparent transparent transparent;
+    border-width: 168px;
+    z-index: 4;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    transition: 1.3s;
+    transform-origin: top;
+}
+.container:hover::after {
+    transform: rotateX(180deg);
+}
+.container .text{
+   padding: 15px;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #ff7b92;
+    line-height: 2;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    transition: 1.5s;
+    transition-delay: 0.8s;
+    border-radius: 10px;
+    width: 315px;
+}
+.container:hover .text {
+    top: -15px;
+    z-index: 5;
+    width: 300px;
+    height: 250px;
+    transition: 2s;
+}
